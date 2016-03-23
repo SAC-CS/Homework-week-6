@@ -1,0 +1,62 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package rps;
+
+import java.util.Scanner;
+import java.util.Random;
+public class RPS {
+    
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner keyb=new Scanner (System.in);
+        Random rand = new Random();
+        int compScore=0;
+        int userScore=0;
+        
+        System.out.println("do you want to start a new game? (Y/N)");
+        String play = keyb.nextLine();
+        boolean inGame = play.equals("Y");
+        while(inGame && compScore<5 && userScore<5){
+            System.out.println("Enter 0 for Rock, 1 for paper, 2 for Scissors");
+            int user = keyb.nextInt();
+            int comp=rand.nextInt(3);
+            System.out.println("I drew:"+comp);           
+            if ( (user==0 && comp==2)
+                (user==1 && comp==0)
+                (user==2 && comp==1) ) 
+            {
+                System.out.println("You are victorious!");
+                userScore++;
+            }
+            else if ( (user==0 && comp==1)
+                       (user==1 && comp==2)
+                       (user==2 && comp==0) )
+            {             
+                System.out.println("I am Victorious!");
+                compScore++;
+            }
+            System.out.println("Score: you:" +userScore+" - Computer:" +compScore);
+        }
+           if(compScore>userScore)
+            System.out.println("I beat you");
+           else
+            System.out.println("You beat me!");
+        
+                    
+                    
+           
+           
+                        
+                            
+                        }                               
+        
+                       
+                 
+                    
+        }
